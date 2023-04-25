@@ -2,12 +2,12 @@ import { useDispatch } from 'react-redux';
 import Layout from '@/components/Layout/Layout';
 import { cartAcions } from '@/store/cartSlice';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 // import { useRouter } from 'next/router';
 // import data from '../../store/data';
 import db from '@/store/db';
 import Product from '@/models/Product';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -19,8 +19,8 @@ export default function ProductScreen(props) {
   // console.log(product);
   const dispatch = useDispatch();
 
-  const { query } = useRouter();
-  const { slug } = query;
+  // const { query } = useRouter();
+  // const { slug } = query;
   // const product = data.product.find((x) => x.slug === slug);
   if (!product) {
     return <div>Produt Not Found</div>;
