@@ -1,13 +1,13 @@
 import CheckoutWizard from '@/components/CheckoutWizard';
 import Layout from '@/components/Layout/Layout';
-import { cartAcions } from '@/store/cartSlice';
+// import { cartAcions } from '@/store/cartSlice';
 import { getError } from '@/store/error';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 export default function PlaceOrderScreen() {
@@ -15,7 +15,7 @@ export default function PlaceOrderScreen() {
   const shippingAddress = useSelector((state) => state.cart.shipingAdress);
   const paymentMethod = useSelector((state) => state.cart.paymentMethod);
 
-  const disapatch = useDispatch();
+  // const disapatch = useDispatch();
 
   const cartItemsPrices = [];
 
@@ -64,7 +64,7 @@ export default function PlaceOrderScreen() {
       toast.error(getError(err));
     }
 
-    disapatch(cartAcions.cartClearItems());
+    // disapatch(cartAcions.cartClearItems());
   };
 
   console.log(shippingAddress.PostalCode);
