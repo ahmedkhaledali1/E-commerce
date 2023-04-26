@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import axios from 'axios';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { toast } from 'react-toastify';
@@ -23,13 +24,15 @@ export default function ProductItem(props) {
     });
   };
   return (
-    <div className="card">
+    <div className="card flex flex-col justify-items-center ">
       <Link href={`./product/${product.slug}`}>
         <div>
-          <img
+          <Image
             src={product.image}
             alt={product.name}
-            className="rounded shadow"
+            width={915}
+            height={915}
+            className="rounded shadow w-915 h-915"
           />
         </div>
       </Link>

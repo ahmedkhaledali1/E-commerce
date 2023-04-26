@@ -51,7 +51,9 @@ const deleteHandler = async (req, res) => {
   await db.connect();
   const product = await Product.findById(req.query.id);
   if (product) {
-    await product.remove();
+    await Product.findOne({ _id: req.query.id });
+    console.log(Product);
+    await product.deleteOne();
     await db.disconnect();
     res.send({ message: 'Product deleted successfully' });
   } else {

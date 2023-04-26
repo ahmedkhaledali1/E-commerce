@@ -86,13 +86,14 @@ export default function AdminProductEditScreen() {
 
         setValue('image', data.image);
 
-        setValue('category', data.category);
+        setValue('catigory', data.catigory);
 
         setValue('brand', data.brand);
 
         setValue('countInStock', data.countInStock);
 
-        setValue('description', data.description);
+        setValue('descripion', data.descripion);
+        setValue('quantitt', 1);
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
@@ -134,7 +135,7 @@ export default function AdminProductEditScreen() {
 
     price,
 
-    category,
+    catigory,
 
     image,
 
@@ -142,7 +143,8 @@ export default function AdminProductEditScreen() {
 
     countInStock,
 
-    description,
+    descripion,
+    quantity,
   }) => {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
@@ -154,7 +156,7 @@ export default function AdminProductEditScreen() {
 
         price,
 
-        category,
+        catigory,
 
         image,
 
@@ -162,7 +164,8 @@ export default function AdminProductEditScreen() {
 
         countInStock,
 
-        description,
+        descripion,
+        quantity,
       });
 
       dispatch({ type: 'UPDATE_SUCCESS' });
@@ -219,7 +222,7 @@ export default function AdminProductEditScreen() {
 
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full text-black"
                   id="name"
                   autoFocus
                   {...register('name', {
@@ -237,7 +240,7 @@ export default function AdminProductEditScreen() {
 
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full text-black"
                   id="slug"
                   {...register('slug', {
                     required: 'Please enter slug',
@@ -254,7 +257,7 @@ export default function AdminProductEditScreen() {
 
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full text-black"
                   id="price"
                   {...register('price', {
                     required: 'Please enter price',
@@ -271,7 +274,7 @@ export default function AdminProductEditScreen() {
 
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full text-black"
                   id="image"
                   {...register('image', {
                     required: 'Please enter image',
@@ -287,7 +290,7 @@ export default function AdminProductEditScreen() {
                 <label htmlFor="imageFile">Upload image</label>
                 <input
                   type="file"
-                  className="w-full"
+                  className="w-full text-black"
                   id="imageFile"
                   onChange={uploadHandler}
                 />
@@ -296,19 +299,19 @@ export default function AdminProductEditScreen() {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="category">category</label>
+                <label htmlFor="catigory">category</label>
 
                 <input
                   type="text"
-                  className="w-full"
-                  id="category"
-                  {...register('category', {
+                  className="w-full text-black"
+                  id="catigory"
+                  {...register('catigory', {
                     required: 'Please enter category',
                   })}
                 />
 
-                {errors.category && (
-                  <div className="text-red-500">{errors.category.message}</div>
+                {errors.catigory && (
+                  <div className="text-red-500">{errors.catigory.message}</div>
                 )}
               </div>
 
@@ -317,7 +320,7 @@ export default function AdminProductEditScreen() {
 
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full text-black"
                   id="brand"
                   {...register('brand', {
                     required: 'Please enter brand',
@@ -334,7 +337,7 @@ export default function AdminProductEditScreen() {
 
                 <input
                   type="text"
-                  className="w-full"
+                  className="w-full text-black"
                   id="countInStock"
                   {...register('countInStock', {
                     required: 'Please enter countInStock',
@@ -349,18 +352,18 @@ export default function AdminProductEditScreen() {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="countInStock">description</label>
+                <label htmlFor="descripion">description</label>
 
                 <input
                   type="text"
-                  className="w-full"
-                  id="description"
-                  {...register('description', {
+                  className="w-full text-black"
+                  id="descripion"
+                  {...register('descripion', {
                     required: 'Please enter description',
                   })}
                 />
 
-                {errors.description && (
+                {errors.descripton && (
                   <div className="text-red-500">
                     {errors.description.message}
                   </div>
