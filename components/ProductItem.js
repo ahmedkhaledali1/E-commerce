@@ -22,6 +22,8 @@ export default function ProductItem(props) {
       price: product.price * product.quantity,
       image: product.image,
     });
+    console.log(product.price);
+    console.log(product.quantity);
   };
   return (
     <div className="card flex flex-col justify-items-center ">

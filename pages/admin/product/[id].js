@@ -93,7 +93,8 @@ export default function AdminProductEditScreen() {
         setValue('countInStock', data.countInStock);
 
         setValue('descripion', data.descripion);
-        setValue('quantitt', 1);
+
+        setValue('quantitt', data.quantity);
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
@@ -144,6 +145,7 @@ export default function AdminProductEditScreen() {
     countInStock,
 
     descripion,
+
     quantity,
   }) => {
     try {
@@ -165,6 +167,7 @@ export default function AdminProductEditScreen() {
         countInStock,
 
         descripion,
+
         quantity,
       });
 

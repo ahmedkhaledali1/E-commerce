@@ -2,32 +2,18 @@ import { useDispatch } from 'react-redux';
 import Layout from '@/components/Layout/Layout';
 import { cartAcions } from '@/store/cartSlice';
 import Image from 'next/image';
-// import Link from 'next/link';
-// import { useRouter } from 'next/router';
-// import data from '../../store/data';
 import db from '@/store/db';
 import Product from '@/models/Product';
-// import { useRouter } from 'next/router';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
 export default function ProductScreen(props) {
   const product = props.myproduct;
-  // // const val = t.t;
-  // // console.log(val);
 
-  // console.log(product);
   const dispatch = useDispatch();
-
-  // const { query } = useRouter();
-  // const { slug } = query;
-  // const product = data.product.find((x) => x.slug === slug);
   if (!product) {
     return <div>Produt Not Found</div>;
   }
-
-  // const quantity = +product.quantity;
-  // const price = +product.price;
 
   const addToCartHandler = async function () {
     const { data } = await axios.get(`/api/products/${product._id}`);
@@ -46,7 +32,7 @@ export default function ProductScreen(props) {
   };
   return (
     <Layout title={product.name}>
-      <div className=" flex justify-between f">
+      <div className=" flex justify-center items-center flex-col w-full">
         <div className=" mb-12 rounded-xl">
           <Image
             src={product.image}
@@ -56,7 +42,7 @@ export default function ProductScreen(props) {
             layout="responseve"
           ></Image>
         </div>
-        <div className="flex flex-col w-1/2 h-[85%] items-center justify-between mb-14 ">
+        <div className="flex flex-col w-full h-[85%] items-center justify-between mb-14 ">
           <div className="text-3xl">
             <ul>
               <li className="my-4">
@@ -70,7 +56,7 @@ export default function ProductScreen(props) {
               <li> Descripion: {product.descripion}</li>
             </ul>
           </div>
-          <div className="mt-14 w-[40%] text-xl">
+          <div className="mt-14 w-[50%] text-xl">
             <div className="card p-5">
               <div className="mb-6 flex justify-between">
                 <div>price</div>

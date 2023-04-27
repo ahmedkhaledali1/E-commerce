@@ -54,7 +54,7 @@ function Shiping() {
         <div className="mb-4">
           <label htmlFor="fullName">Full Name</label>
           <input
-            className="w-full"
+            className="w-full text-black"
             id="fullName"
             autoFocus
             {...register('fullName', {
@@ -68,7 +68,7 @@ function Shiping() {
         <div className="mb-4">
           <label htmlFor="Adress">Adress</label>
           <input
-            className="w-full"
+            className="w-full text-black"
             id="Adress"
             autoFocus
             {...register('Adress', {
@@ -83,7 +83,7 @@ function Shiping() {
         <div className="mb-4">
           <label htmlFor="city">city</label>
           <input
-            className="w-full"
+            className="w-full text-black"
             id="city"
             autoFocus
             {...register('city', {
@@ -97,7 +97,7 @@ function Shiping() {
         <div className="mb-4">
           <label htmlFor="PostalCode">Postal Code</label>
           <input
-            className="w-full"
+            className="w-full text-black"
             id="PostalCode"
             autoFocus
             {...register('PostalCode', {
@@ -111,7 +111,7 @@ function Shiping() {
         <div className="mb-4">
           <label htmlFor="country">country</label>
           <input
-            className="w-full"
+            className="w-full text-black"
             id="country"
             autoFocus
             {...register('country', {

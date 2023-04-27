@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 const Home = (products) => {
   const Product = products.products;
 
+  console.log(Product);
+
   const disapatch = useDispatch();
 
   const addToCartHandler = async (item) => {
