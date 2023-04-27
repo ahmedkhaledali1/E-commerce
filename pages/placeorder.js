@@ -74,10 +74,7 @@ export default function PlaceOrderScreen() {
       <CheckoutWizard activeStep={3} />
       <h1 className="mb-4 text-xl">Place Order</h1>
       {cartItems.length === 0 ? (
-        <div>
-          {' '}
-          cart is empty <Link href="/">Go Shopping</Link>{' '}
-        </div>
+        <div>Vercel do not support this step</div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
